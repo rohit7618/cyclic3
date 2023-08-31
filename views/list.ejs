@@ -1,0 +1,28 @@
+<%- include('header');-%>
+<div class="box" id="heading">
+  <h1><%= listtitle %></h1>
+
+</div>
+<div class="box">
+<%  newtodos.forEach(function(Item){    %>
+  <form class="" action="/delete" method="post">
+    <div class="item">
+      <input type="checkbox" name="checkbox" value="<%=Item._id%>" onchange="this.form.submit()">
+        <input type="hidden" id="custId" name="checkboxdelete" value=<%= listtitle %>>
+    <p><%= Item.name %></p>
+    </div>
+  </form>
+
+
+<%  }); %>
+
+
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="items" autofocus>
+
+    <button type="submit" name="button" value=<%= listtitle %>>+</button>
+  </form>
+
+</div>
+<%- include('footer');-%>
